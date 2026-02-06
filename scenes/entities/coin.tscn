@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfew46syr3nhf"]
+
+[ext_resource type="Script" uid="uid://cq50uth46dhy0" path="res://scenes/entities/coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://td7r16r33ye8" path="res://assets/img/Coin.png" id="1_rwqht"]
+[ext_resource type="Script" uid="uid://du614n1cthf8r" path="res://scripts/inventory/item_base.gd" id="3_83qlk"]
+[ext_resource type="Script" uid="uid://cg1eatlb5js1k" path="res://scripts/inventory/money.gd" id="4_okj2o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i64fm"]
+radius = 7.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_d14el"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_11l1o"]
+resource_name = "spin"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ikuy"]
+_data = {
+&"RESET": SubResource("Animation_d14el"),
+&"spin": SubResource("Animation_11l1o")
+}
+
+[sub_resource type="Resource" id="Resource_2owr0"]
+script = ExtResource("4_okj2o")
+amount = 1
+id = ""
+name = ""
+metadata/_custom_type_script = ExtResource("4_okj2o")
+
+[node name="Coin" type="Area2D" node_paths=PackedStringArray("item_base") groups=["coin"]]
+z_index = 150
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_i64fm")
+item_base = NodePath("ItemBase")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i64fm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.3, 1.1, 0.7, 1)
+texture = ExtResource("1_rwqht")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1ikuy")
+}
+autoplay = "spin"
+
+[node name="ItemBase" type="Node2D" parent="."]
+script = ExtResource("3_83qlk")
+item = SubResource("Resource_2owr0")
+metadata/_custom_type_script = "uid://du614n1cthf8r"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

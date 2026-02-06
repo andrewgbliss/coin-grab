@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://dan0dpwm671ho"]
+
+[ext_resource type="Texture2D" uid="uid://ci43f34rmx71n" path="res://assets/img/Layer 6.png" id="1_wlvpp"]
+[ext_resource type="Texture2D" uid="uid://bitop1ksil5ne" path="res://assets/img/Layer 1.png" id="2_yqrhs"]
+[ext_resource type="Texture2D" uid="uid://co33m5griuxt0" path="res://assets/img/Layer 2a.png" id="3_55o7p"]
+[ext_resource type="Texture2D" uid="uid://byfom5jl5o66x" path="res://assets/img/Layer 3 Copy.png" id="4_ae0p1"]
+[ext_resource type="Texture2D" uid="uid://bl2exyl7u7q47" path="res://assets/img/Layer 2.png" id="5_gdwbl"]
+[ext_resource type="Texture2D" uid="uid://oqa6awu80qmd" path="res://assets/img/Layer 3.png" id="6_tt4hj"]
+[ext_resource type="Texture2D" uid="uid://boh44ttty17al" path="res://assets/img/Layer 4.png" id="7_ifm33"]
+[ext_resource type="Texture2D" uid="uid://bw0jk1hegkhm8" path="res://assets/img/GreenSheet.png" id="8_4wmsg"]
+[ext_resource type="Texture2D" uid="uid://dr6kxlad1pq16" path="res://assets/img/GreenSheetDark.png" id="9_j382v"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax2D7" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 180)
+repeat_times = 12
+
+[node name="Layer6" type="Sprite2D" parent="Parallax2D7"]
+texture = ExtResource("1_wlvpp")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.05, 0.7)
+scroll_offset = Vector2(0, 40)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer1" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(-601, 12)
+texture = ExtResource("2_yqrhs")
+
+[node name="Layer2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(-601, 12)
+texture = ExtResource("3_55o7p")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.05, 0.7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer3Copy" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(0, 53)
+texture = ExtResource("4_ae0p1")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-588, 53)
+texture = ExtResource("5_gdwbl")
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.7)
+scroll_offset = Vector2(-1, -7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer3" type="Sprite2D" parent="Parallax2D5"]
+position = Vector2(-239, 54)
+texture = ExtResource("6_tt4hj")
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.7)
+scroll_offset = Vector2(-318, 5)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer4" type="Sprite2D" parent="Parallax2D6"]
+position = Vector2(-274, 54)
+texture = ExtResource("7_ifm33")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.7)
+scroll_offset = Vector2(0, -2)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="GreenSheet" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-92, 233)
+texture = ExtResource("8_4wmsg")
+
+[node name="GreenSheetDark" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 246)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 372)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 549)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark4" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 725)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheet2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-92, 889)
+texture = ExtResource("8_4wmsg")
+
+[node name="GreenSheetDark5" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 902)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark6" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 1028)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark7" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 1205)
+texture = ExtResource("9_j382v")
+
+[node name="GreenSheetDark8" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 1381)
+texture = ExtResource("9_j382v")

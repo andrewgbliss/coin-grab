@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://clo0wnr0g0acg"]
+
+[ext_resource type="Texture2D" uid="uid://c6uggq6gfwyxb" path="res://assets/img/backgrounds/stone-mountians/Layer 6.png" id="1_cm2oh"]
+[ext_resource type="Texture2D" uid="uid://beqrqt30srbfq" path="res://assets/img/backgrounds/stone-mountians/Layer 3 Copy.png" id="2_bwk6g"]
+[ext_resource type="Texture2D" uid="uid://bbmtwcckoycxd" path="res://assets/img/backgrounds/stone-mountians/Layer 5.png" id="3_qvm6m"]
+[ext_resource type="Texture2D" uid="uid://50vunfil30bp" path="res://assets/img/backgrounds/stone-mountians/Layer 3.png" id="4_ve38d"]
+[ext_resource type="Texture2D" uid="uid://cr6i3yet74hn7" path="res://assets/img/backgrounds/stone-mountians/Layer 7.png" id="5_404mj"]
+
+[node name="BackgroundStoneMountains" type="Node2D"]
+
+[node name="Parallax2D7" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 180)
+repeat_times = 12
+
+[node name="Layer6" type="Sprite2D" parent="Parallax2D7"]
+texture = ExtResource("1_cm2oh")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.05, 0.7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer3Copy" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(0, 53)
+texture = ExtResource("2_bwk6g")
+
+[node name="Parallax2D6" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.7)
+scroll_offset = Vector2(-1, -7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer5" type="Sprite2D" parent="Parallax2D6"]
+position = Vector2(-239, 54)
+texture = ExtResource("3_qvm6m")
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.7)
+scroll_offset = Vector2(-1, -7)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="Layer3" type="Sprite2D" parent="Parallax2D5"]
+position = Vector2(-239, 54)
+texture = ExtResource("4_ve38d")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.7)
+scroll_offset = Vector2(0, -17)
+repeat_size = Vector2(320, 0)
+repeat_times = 12
+
+[node name="GreenSheet" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-92, 233)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 246)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 372)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark3" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 549)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark4" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 725)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheet2" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-92, 889)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark5" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 902)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark6" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-73, 1028)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark7" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 1205)
+texture = ExtResource("5_404mj")
+
+[node name="GreenSheetDark8" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(-72, 1381)
+texture = ExtResource("5_404mj")

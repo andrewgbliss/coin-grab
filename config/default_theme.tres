@@ -1,0 +1,115 @@
+[gd_resource type="Theme" format=3 uid="uid://b5usnapfci8eo"]
+
+[ext_resource type="FontFile" uid="uid://dgx0tlmy4dxhu" path="res://assets/fonts/PixelFont.ttf" id="1_knrol"]
+[ext_resource type="Texture2D" uid="uid://cg8a08ya3r1iq" path="res://assets/ui/FunWoodSet.png" id="1_qeu2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeu2a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dt84"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeu2a"]
+atlas = ExtResource("1_qeu2a")
+region = Rect2(96, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qeu2a"]
+texture = SubResource("AtlasTexture_qeu2a")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+region_rect = Rect2(0, 0, 48, 16)
+modulate_color = Color(1.5, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06688"]
+texture = SubResource("AtlasTexture_qeu2a")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+region_rect = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dt84"]
+texture = SubResource("AtlasTexture_qeu2a")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+region_rect = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5rks"]
+texture = SubResource("AtlasTexture_qeu2a")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+region_rect = Rect2(0, 0, 48, 16)
+modulate_color = Color(0.385, 1.1, 0.395, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dt84"]
+atlas = ExtResource("1_qeu2a")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kajgs"]
+texture = SubResource("AtlasTexture_7dt84")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(8, 8, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ujvfm"]
+texture = SubResource("AtlasTexture_qeu2a")
+texture_margin_left = 6.0
+texture_margin_right = 6.0
+region_rect = Rect2(0, 0, 48, 16)
+modulate_color = Color(0.990725, 0.275259, 0.224504, 1)
+
+[resource]
+default_font = ExtResource("1_knrol")
+default_font_size = 32
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_qeu2a")
+Button/styles/focus = SubResource("StyleBoxFlat_7dt84")
+Button/styles/hover = SubResource("StyleBoxTexture_qeu2a")
+Button/styles/normal = SubResource("StyleBoxTexture_06688")
+Button/styles/pressed = SubResource("StyleBoxTexture_7dt84")
+GreenButton/base_type = &"Button"
+GreenButton/styles/normal = SubResource("StyleBoxTexture_d5rks")
+Panel/styles/panel = SubResource("StyleBoxTexture_kajgs")
+RedButton/base_type = &"Button"
+RedButton/styles/normal = SubResource("StyleBoxTexture_ujvfm")

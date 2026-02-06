@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://dcvafn567bdo6"]
+
+[ext_resource type="Script" uid="uid://u80d0has6rej" path="res://scripts/character_controllers/platformer_character_controller.gd" id="1_02007"]
+[ext_resource type="Script" uid="uid://d6473uufaaqv" path="res://scripts/inventory/inventory.gd" id="2_cxjih"]
+[ext_resource type="Script" uid="uid://b20n78127jv4d" path="res://scripts/character_controllers/character_controls.gd" id="2_sndeg"]
+[ext_resource type="Texture2D" uid="uid://ccmnr84fvn1t5" path="res://assets/img/CoineyMcgee.png" id="3_cxjih"]
+[ext_resource type="Script" uid="uid://8aeb3mbb6a05" path="res://scripts/character_controllers/states/state_label.gd" id="6_aqbld"]
+[ext_resource type="Script" uid="uid://cc58bv1fvx8am" path="res://scripts/character_controllers/states/ground_state.gd" id="6_cxjih"]
+[ext_resource type="Script" uid="uid://cxln6q4c8sdb5" path="res://scripts/character_controllers/states/air_state.gd" id="7_cxjih"]
+[ext_resource type="Script" uid="uid://bti4mwhmm58cm" path="res://scripts/character_controllers/states/platformer_state_machine.gd" id="8_cxjih"]
+[ext_resource type="Script" uid="uid://b7qalvoc4xjo6" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_hbmqm"]
+[ext_resource type="Script" uid="uid://7yrein17cvti" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_aqbld"]
+
+[sub_resource type="Resource" id="Resource_u3vce"]
+script = ExtResource("2_cxjih")
+metadata/_custom_type_script = "uid://d6473uufaaqv"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(13, 18)
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dyp2m"]
+resource_name = "fall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_3vyb7"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_atpat"]
+resource_name = "land"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_76oj4"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_g2els"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
+_data = {
+&"RESET": SubResource("Animation_dqkch"),
+&"fall": SubResource("Animation_dyp2m"),
+&"idle": SubResource("Animation_3vyb7"),
+&"jump": SubResource("Animation_qhqgy"),
+&"land": SubResource("Animation_atpat"),
+&"run": SubResource("Animation_76oj4"),
+&"walk": SubResource("Animation_g2els")
+}
+
+[sub_resource type="Resource" id="Resource_fqf3k"]
+script = ExtResource("10_aqbld")
+
+[node name="Dwarf" type="CharacterBody2D" unique_id=631805856 node_paths=PackedStringArray("animation_player", "sprite", "controls", "collision_shape", "phantom_camera", "state_machine") groups=["player"]]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_02007")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+controls = NodePath("CharacterControls")
+collision_shape = NodePath("CollisionShape2D")
+run_speed = 250.0
+acceleration = 50.0
+friction = 40.0
+inventory = SubResource("Resource_u3vce")
+is_player = true
+phantom_camera = NodePath("PhantomCamera2D")
+state_machine = NodePath("PlatformerStateMachine")
+
+[node name="CharacterControls" type="Node" parent="." unique_id=964558315 node_paths=PackedStringArray("state_machine")]
+script = ExtResource("2_sndeg")
+lock_x_controls = true
+state_machine = NodePath("../PlatformerStateMachine")
+metadata/_custom_type_script = "uid://b20n78127jv4d"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223263556]
+position = Vector2(-0.5, 7)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=685924273]
+texture = ExtResource("3_cxjih")
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=487854469]
+libraries/ = SubResource("AnimationLibrary_qlg0r")
+
+[node name="StateLabel" type="Label" parent="." unique_id=832280394 node_paths=PackedStringArray("state_machine")]
+visible = false
+offset_left = -18.0
+offset_top = -36.0
+offset_right = 22.0
+offset_bottom = -4.0
+text = "Hello"
+script = ExtResource("6_aqbld")
+state_machine = NodePath("../PlatformerStateMachine")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=269512708 node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("9_hbmqm")
+follow_mode = 2
+follow_target = NodePath("..")
+zoom = Vector2(2, 2)
+tween_resource = SubResource("Resource_fqf3k")
+follow_damping = true
+draw_limits = true
+metadata/_custom_type_script = "uid://b7qalvoc4xjo6"
+
+[node name="PlatformerStateMachine" type="Node" parent="." unique_id=1455652315 node_paths=PackedStringArray("character", "initial_state")]
+script = ExtResource("8_cxjih")
+character = NodePath("..")
+initial_state = NodePath("GroundState")
+metadata/_custom_type_script = "uid://bti4mwhmm58cm"
+
+[node name="GroundState" type="Node" parent="PlatformerStateMachine" unique_id=883227249]
+script = ExtResource("6_cxjih")
+metadata/_custom_type_script = "uid://cc58bv1fvx8am"
+
+[node name="AirState" type="Node" parent="PlatformerStateMachine" unique_id=717518078]
+script = ExtResource("7_cxjih")
+metadata/_custom_type_script = "uid://cxln6q4c8sdb5"

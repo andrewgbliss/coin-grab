@@ -1,0 +1,192 @@
+[gd_scene load_steps=19 format=3 uid="uid://ck6dimxiyb7qu"]
+
+[ext_resource type="Script" uid="uid://cq04s4bg4shub" path="res://scenes/environment/stone_door/stone_door.gd" id="1_044sa"]
+[ext_resource type="Texture2D" uid="uid://dw71uo0c76h0b" path="res://assets/img/Door.png" id="3_044sa"]
+[ext_resource type="Shader" uid="uid://buryqq744frov" path="res://scenes/environment/stone_door/stone_door.gdshader" id="3_enots"]
+[ext_resource type="Texture2D" uid="uid://bt8872gvl3mnq" path="res://assets/img/Stone.png" id="4_044sa"]
+[ext_resource type="Texture2D" uid="uid://ck4d8ht0gdver" path="res://assets/img/Frame.png" id="5_abuwn"]
+[ext_resource type="Script" uid="uid://b7qalvoc4xjo6" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_ta281"]
+[ext_resource type="Script" uid="uid://7yrein17cvti" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_fk30t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abuwn"]
+size = Vector2(14, 31)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abuwn"]
+shader = ExtResource("3_enots")
+shader_parameter/progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_enots"]
+shader = ExtResource("3_enots")
+shader_parameter/progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_044sa"]
+shader = ExtResource("3_enots")
+shader_parameter/progress = 0.0
+
+[sub_resource type="Animation" id="Animation_044sa"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stone:material:shader_parameter/progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_abuwn"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stone:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ta281"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stone:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_enots"]
+resource_name = "transition_in"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_fk30t"]
+resource_name = "transition_out"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abuwn"]
+_data = {
+&"RESET": SubResource("Animation_044sa"),
+&"close": SubResource("Animation_abuwn"),
+&"open": SubResource("Animation_ta281"),
+&"transition_in": SubResource("Animation_enots"),
+&"transition_out": SubResource("Animation_fk30t")
+}
+
+[sub_resource type="Resource" id="Resource_jk0wr"]
+script = ExtResource("7_fk30t")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="StoneDoor" type="Area2D" node_paths=PackedStringArray("stone_sprite", "frame_sprite", "phantom_camera")]
+collision_mask = 2
+script = ExtResource("1_044sa")
+stone_sprite = NodePath("Stone")
+frame_sprite = NodePath("Frame")
+phantom_camera = NodePath("PhantomCamera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_abuwn")
+
+[node name="Door" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_abuwn")
+texture = ExtResource("3_044sa")
+
+[node name="Stone" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_enots")
+texture = ExtResource("4_044sa")
+
+[node name="Frame" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_044sa")
+texture = ExtResource("5_abuwn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_abuwn")
+}
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("6_ta281")
+zoom = Vector2(2.5, 2.5)
+tween_resource = SubResource("Resource_jk0wr")
+draw_limits = true
+metadata/_custom_type_script = "uid://b7qalvoc4xjo6"

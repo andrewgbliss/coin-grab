@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://buh6bxcocixpe"]
+
+[ext_resource type="Script" uid="uid://mte2cgqaa2mf" path="res://scenes/autoload/audio_manager/audio_manager.gd" id="1_l3ouf"]
+[ext_resource type="AudioStream" uid="uid://b23qs6quklk25" path="res://assets/audio/Fight On.mp3" id="2_b7rbf"]
+[ext_resource type="AudioStream" uid="uid://dst5csetrxhaw" path="res://assets/audio/pickupCoin.wav" id="3_s8i8k"]
+[ext_resource type="AudioStream" uid="uid://lp4e1ku7tcy5" path="res://assets/audio/pickupCoin2.wav" id="4_ofup8"]
+[ext_resource type="AudioStream" uid="uid://g0gubnc2i6sg" path="res://assets/audio/pickupCoin3.wav" id="5_oppep"]
+[ext_resource type="AudioStream" uid="uid://bqprpdbsm8pu4" path="res://assets/audio/wind-swipe.mp3" id="6_1kxiy"]
+[ext_resource type="AudioStream" uid="uid://bblc6two4kt3n" path="res://assets/audio/click.mp3" id="6_oppep"]
+[ext_resource type="AudioStream" uid="uid://qx4kx5nblygx" path="res://assets/audio/wind-swipe-away.mp3" id="6_yugto"]
+[ext_resource type="AudioStream" uid="uid://bowb86q02rm6k" path="res://assets/audio/jump.wav" id="9_rahri"]
+[ext_resource type="AudioStream" uid="uid://sbusipiqf5fa" path="res://assets/audio/jump2.wav" id="10_a3tju"]
+[ext_resource type="AudioStream" uid="uid://hyuoul31vfmo" path="res://assets/audio/jump3.wav" id="11_62owc"]
+[ext_resource type="AudioStream" uid="uid://xvvsxu7cqu1b" path="res://assets/audio/jump4.wav" id="12_b7rbf"]
+[ext_resource type="AudioStream" uid="uid://dpntlfulg6mt1" path="res://assets/audio/Hit.mp3" id="13_b7rbf"]
+[ext_resource type="AudioStream" uid="uid://dj3k52kffyoqj" path="res://assets/audio/Wiggles.mp3" id="14_66vhq"]
+[ext_resource type="AudioStream" uid="uid://1dqv7t3snk7g" path="res://assets/audio/RocketSwell.mp3" id="15_qhdo1"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_l3ouf")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b7rbf")
+volume_db = -10.866
+bus = &"Music"
+
+[node name="PickupCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s8i8k")
+volume_db = -20.612
+bus = &"Effects"
+
+[node name="PickupCoin2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ofup8")
+volume_db = -20.612
+bus = &"Effects"
+
+[node name="PickupCoin3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oppep")
+volume_db = -20.612
+bus = &"Effects"
+
+[node name="WindSwipeIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1kxiy")
+bus = &"Effects"
+
+[node name="WindSwipeOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yugto")
+bus = &"Effects"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_oppep")
+bus = &"Effects"
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rahri")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="Jump2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_a3tju")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="Jump3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_62owc")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="Jump4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_b7rbf")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_b7rbf")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="Wiggles" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_66vhq")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="RocketSwell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_qhdo1")
+bus = &"Effects"
